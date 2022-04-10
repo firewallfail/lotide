@@ -55,9 +55,9 @@ const eqObjects = function(object1, object2) {
       //can't be equal if the 2 arrays are a different length
       if (object1.length !== object2.length) return false;
       //call itself on the 2 array indexes, returning false if a pair doesn't match
-      object1.forEach(function(value, i) {
+      for (let i = 0; i < object1.length; i++) {
         if (!eqObjects(object1[i], object2[i])) return false;
-      });
+      }
       return true;
     }
   }
@@ -135,3 +135,11 @@ const uglyObject3 = {
 assertEqual(eqObjects(uglyObject, uglyObject2), false);
 assertEqual(eqObjects(uglyObject, uglyObject3), true);
 
+//tests from recursive eqArrays to see if it will work for that too
+
+const arrayTest1 = eqObjects([[2, 3], [4]], [[2, 3], [4]]) // => true
+assertEqual(arrayTest1, true);
+const arrayTest2 = eqObjects([[2, 3], [5]], [[2, 3], [4, 5]]) // => false
+assertEqual(arrayTest2, false);
+const arrayTest3 = eqObjects([[2, 3], [4]], [[2, 3], [4, 5]]) // => false
+assertEqual(arrayTest3, false);
