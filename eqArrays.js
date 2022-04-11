@@ -1,18 +1,3 @@
-//Function implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (actual !== expected) {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// const eqArrays = function(firstArray, secondArray) {
-//   if (firstArray.length !== secondArray.length) return false;
-//   return firstArray.every((value, index) => value === secondArray[index]);
-// };
-
 const eqArrays = function(object1, object2) {
   //if they aren't the same type they can't be the same.
   if (typeof (object1) !== typeof (object2)) {
@@ -49,17 +34,5 @@ const eqArrays = function(object1, object2) {
   //base case, 2 things that can be directly compared
   return object1 === object2;
 };
-// eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
-// eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
 
-//should PASS
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([], []), true);
-assertEqual(eqArrays([1, 2, 3], [1, 2]), false);
-assertEqual(eqArrays([1, 2, 3], [1, 2, 4]), false);
-assertEqual(eqArrays([1, 2, 3], [1, 2]), false);
-
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true) // => true
-
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false)// => false
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false) // => false
+module.exports = eqArrays;
