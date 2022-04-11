@@ -23,6 +23,8 @@ const letterPositions = function(sentence) {
   return results;
 };
 
+module.exports = letterPositions;
+
 const test1 = letterPositions("lighthouse in the house");
 console.log(test1);
 const test2 = letterPositions("hello");

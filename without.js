@@ -19,6 +19,8 @@ const without = function(arr1, arr2) {
   return newArray;
 };
 
+module.exports = without;
+
 //test case
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case

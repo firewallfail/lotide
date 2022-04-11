@@ -18,6 +18,7 @@ const countLetters = (inputString) => {
   }
   return countedLetters;
 };
+module.exports = countLetters;
 
 //Test code
 const test1 = countLetters('LHL');
