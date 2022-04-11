@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@brenthall/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "Mini clone of lowdash made for LHL project",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/firewallfail/lotide.git"
   },
-  "author": "",
+  "author": "firewallfail",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/firewallfail/lotide/issues"
