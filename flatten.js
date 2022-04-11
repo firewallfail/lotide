@@ -28,8 +28,8 @@ const flatten = function(arr) {
 
 module.exports = flatten;
 
-//test case
-const test1 = flatten([1, 2, 3, [4, 5, 6], 7, 8, [9, 10], 11, 12]);
-assertArraysEqual(test1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-const test2 = flatten([1, 2, 3, [4, 5, 6], 7, 8, [9, 10], 11, 12]);
-assertArraysEqual(test1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+// //test case
+// const test1 = flatten([1, 2, 3, [4, 5, 6], 7, 8, [9, 10], 11, 12]);
+// assertArraysEqual(test1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+// const test2 = flatten([1, 2, 3, [4, 5, 6], 7, 8, [9, 10], 11, 12]);
+// assertArraysEqual(test1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);

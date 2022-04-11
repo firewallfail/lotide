@@ -68,80 +68,80 @@ const eqObjects = function(object1, object2) {
 module.exports = eqObjects;
 
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const test1 = eqObjects(ab, ba); // => true
-assertEqual(test1, true);
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// const test1 = eqObjects(ab, ba); // => true
+// assertEqual(test1, true);
 
-const abc = { a: "1", b: "2", c: "3" };
-const test2 = eqObjects(ab, abc); // => false
-assertEqual(test2, false);
+// const abc = { a: "1", b: "2", c: "3" };
+// const test2 = eqObjects(ab, abc); // => false
+// assertEqual(test2, false);
 
-const abd = { a: "1", b: "2", d: "3" };
-const test3 = eqObjects(abd, abc); // => false
-assertEqual(test3, false);
+// const abd = { a: "1", b: "2", d: "3" };
+// const test3 = eqObjects(abd, abc); // => false
+// assertEqual(test3, false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false); // => false
 
-const cd3 = { c: "1", d: 4 };
-assertEqual(eqObjects(cd2, cd3), false); // => false
+// const cd3 = { c: "1", d: 4 };
+// assertEqual(eqObjects(cd2, cd3), false); // => false
 
 
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
+// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
 
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
 
-//deeper nested test cases
-const uglyObject = {
-  a: [1, 2, 3, 4],
-  b: 7,
-  c: {
-    a: "hello",
-    b: [1, 2, 3, 4]
-  },
-  d: [1, {
-    b: "nested",
-    hello: [4, 29, 1928, [1, 2, 3]]
-  }, 7, 8]
-};//this and 3 are the same
+// //deeper nested test cases
+// const uglyObject = {
+//   a: [1, 2, 3, 4],
+//   b: 7,
+//   c: {
+//     a: "hello",
+//     b: [1, 2, 3, 4]
+//   },
+//   d: [1, {
+//     b: "nested",
+//     hello: [4, 29, 1928, [1, 2, 3]]
+//   }, 7, 8]
+// };//this and 3 are the same
 
-const uglyObject2 = {
-  a: [1, 2, 3, 4],
-  b: 7,
-  c: {
-    a: "hello",
-    b: [1, 2, 3, 4]
-  }
-};//this is different
+// const uglyObject2 = {
+//   a: [1, 2, 3, 4],
+//   b: 7,
+//   c: {
+//     a: "hello",
+//     b: [1, 2, 3, 4]
+//   }
+// };//this is different
 
-const uglyObject3 = {
-  a: [1, 2, 3, 4],
-  b: 7,
-  c: {
-    a: "hello",
-    b: [1, 2, 3, 4]
-  },
-  d: [1, {
-    b: "nested",
-    hello: [4, 29, 1928, [1, 2, 3]]
-  }, 7, 8]
-};
+// const uglyObject3 = {
+//   a: [1, 2, 3, 4],
+//   b: 7,
+//   c: {
+//     a: "hello",
+//     b: [1, 2, 3, 4]
+//   },
+//   d: [1, {
+//     b: "nested",
+//     hello: [4, 29, 1928, [1, 2, 3]]
+//   }, 7, 8]
+// };
 
-//seems to work with anything nested in anything
-assertEqual(eqObjects(uglyObject, uglyObject2), false);
-assertEqual(eqObjects(uglyObject, uglyObject3), true);
+// //seems to work with anything nested in anything
+// assertEqual(eqObjects(uglyObject, uglyObject2), false);
+// assertEqual(eqObjects(uglyObject, uglyObject3), true);
 
-//tests from recursive eqArrays to see if it will work for that too
+// //tests from recursive eqArrays to see if it will work for that too
 
-const arrayTest1 = eqObjects([[2, 3], [4]], [[2, 3], [4]]) // => true
-assertEqual(arrayTest1, true);
-const arrayTest2 = eqObjects([[2, 3], [5]], [[2, 3], [4, 5]]) // => false
-assertEqual(arrayTest2, false);
-const arrayTest3 = eqObjects([[2, 3], [4]], [[2, 3], [4, 5]]) // => false
-assertEqual(arrayTest3, false);
+// const arrayTest1 = eqObjects([[2, 3], [4]], [[2, 3], [4]]) // => true
+// assertEqual(arrayTest1, true);
+// const arrayTest2 = eqObjects([[2, 3], [5]], [[2, 3], [4, 5]]) // => false
+// assertEqual(arrayTest2, false);
+// const arrayTest3 = eqObjects([[2, 3], [4]], [[2, 3], [4, 5]]) // => false
+// assertEqual(arrayTest3, false);

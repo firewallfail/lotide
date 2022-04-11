@@ -26,15 +26,15 @@ const map = function(array, callback) {
 
 module.exports = map;
 
-const results1 = map(words, word => word[0]);
-console.log(results1);
-assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
+// const results1 = map(words, word => word[0]);
+// console.log(results1);
+// assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
 
-const results2 = map(words, word => word.length);
-assertArraysEqual(results2, [6, 7, 2, 5, 3]);
+// const results2 = map(words, word => word.length);
+// assertArraysEqual(results2, [6, 7, 2, 5, 3]);
 
-const results3 = map(words, word => word[word.length - 1]);
-assertArraysEqual(results3, ['d', 'l', 'o', 'r', 'm']);
+// const results3 = map(words, word => word[word.length - 1]);
+// assertArraysEqual(results3, ['d', 'l', 'o', 'r', 'm']);
 
-const results4 = map(words, () => 42);
-assertArraysEqual(results4, [42, 42, 42, 42, 42]);
+// const results4 = map(words, () => 42);
+// assertArraysEqual(results4, [42, 42, 42, 42, 42]);

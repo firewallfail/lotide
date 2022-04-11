@@ -25,11 +25,11 @@ const letterPositions = function(sentence) {
 
 module.exports = letterPositions;
 
-const test1 = letterPositions("lighthouse in the house");
-console.log(test1);
-const test2 = letterPositions("hello");
+// const test1 = letterPositions("lighthouse in the house");
+// console.log(test1);
+// const test2 = letterPositions("hello");
 
-assertArraysEqual(test2.h, [0]);
-assertArraysEqual(test2.e, [1]);
-assertArraysEqual(test2.l, [2, 3]);
-assertArraysEqual(test2.o, [4]);
+// assertArraysEqual(test2.h, [0]);
+// assertArraysEqual(test2.e, [1]);
+// assertArraysEqual(test2.l, [2, 3]);
+// assertArraysEqual(test2.o, [4]);
